@@ -1,7 +1,9 @@
 import { Elysia } from "elysia";
+import { noteService } from "./infrastructure/ioc/container";
 
-const app = new Elysia().get("/", () => "Hello Elysia").listen(3000);
-
-console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
-);
+const app = new Elysia()
+  .get("/", async () => {
+    const notes = await noteService.getAll();
+    return notes;
+  })
+  .listen(3000);
