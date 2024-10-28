@@ -1,12 +1,17 @@
 import { INote, Note } from "../../interfaces/entities";
+import { injectable } from "inversify";
+import "reflect-metadata";
 
+@injectable()
 export class NoteRepo implements INote {
   async getAll(): Promise<Note[]> {
-    // logic how you get data from DB
-    // prisma.note.findMany()
-    // mongoose.find()
-    // SQL Raw `SELECT * FROM user`
-    return [];
+    return [
+      {
+        id: "test123",
+        content: "test",
+        isDone: false,
+      },
+    ];
   }
 
   async getOneById(): Promise<Note> {

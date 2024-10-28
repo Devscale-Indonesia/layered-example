@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "elysia": "latest",
+    "inversify": "^6.0.3",
+    "reflect-metadata": "^0.2.2",
     "winston": "^3.15.0"
   },
   "devDependencies": {
